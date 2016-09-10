@@ -16,5 +16,6 @@ defmodule Sabiah.User do
     struct
     |> cast(params, [:name, :username, :email])
     |> validate_required([:name, :username, :email])
+    |> validate_format(:email, ~r/@/)
   end
 end

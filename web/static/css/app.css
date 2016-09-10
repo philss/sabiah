@@ -1,1 +1,9 @@
 /* This file is for your main application css. */
+
+form > div.alert-danger ~ .form-group .form-control {
+  border: 1px solid #ff0000;
+}
+
+form > div.alert-danger ~ .form-group .help-block {
+  color: #ff0000;
+}
