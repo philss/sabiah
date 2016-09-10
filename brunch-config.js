@@ -64,6 +64,9 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    styles: {
+      milligram: ['dist/milligram.css']
+    }
   }
 };
