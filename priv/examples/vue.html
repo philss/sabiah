@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Vue.js Example</title>
+  </head>
+  <body>
+    <div id='app'>
+      <input type='text' v-model='message'>
+      {{ message }}
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
+    <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello world'
+      }
+    });
+    </script>
+  </body>
+</html>
