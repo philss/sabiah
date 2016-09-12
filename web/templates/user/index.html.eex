@@ -18,11 +18,14 @@
       <td><%= user.email %></td>
 
       <td class="text-right">
-        <%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %>
+        <%= form_for follower_changeset(user.id), follower_path(@conn, :create), fn f -> %>
+          <%= hidden_input f, :followed_user_id, value: user.id %>
+          <%= submit "+ follow", class: "button" %>
+        <% end %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<%= link "New user", to: user_path(@conn, :new) %>
+<%#= link "New user", to: user_path(@conn, :new) %>

@@ -17,6 +17,7 @@ defmodule Sabiah.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", TimelineController, :index
+    post "/follower", FollowerController, :create
 
     resources "/users",
               UserController,
