@@ -1,7 +1,7 @@
 defmodule Sabiah.FollowerController do
   use Sabiah.Web, :controller
 
-  alias Sabiah.{User, Follower}
+  alias Sabiah.Follower
 
   def create(conn, %{"follower" => params}) do
     user_id = get_session(conn, :user_id)
