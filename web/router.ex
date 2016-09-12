@@ -17,6 +17,7 @@ defmodule Sabiah.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", TimelineController, :index
+
     resources "/users",
               UserController,
               only: [:index, :new, :create, :show]

@@ -1,1 +1,12 @@
 <h2>Timeline</h2>
+
+<div id='timeline-app'>
+  <input type='text' v-model='newTweet'
+    placeholder='What is happening?'>
+
+  <button @click='postTweet' class='button'>Tweet</button>
+
+  <ul>
+    <li v-for='tweet in tweets'>{{ tweet }}</li>
+  </ul>
+</div>
