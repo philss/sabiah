@@ -5,7 +5,6 @@
     <tr>
       <th>Name</th>
       <th>Username</th>
-      <th>Email</th>
 
       <th></th>
     </tr>
@@ -15,7 +14,6 @@
     <tr>
       <td><%= user.name %></td>
       <td><%= user.username %></td>
-      <td><%= user.email %></td>
 
       <td class="text-right">
         <%= form_for follower_changeset(user.id), follower_path(@conn, :create), fn f -> %>
@@ -27,5 +25,3 @@
 <% end %>
   </tbody>
 </table>
-
-<%#= link "New user", to: user_path(@conn, :new) %>

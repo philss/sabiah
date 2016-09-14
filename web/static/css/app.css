@@ -7,3 +7,29 @@ form > div.alert-danger ~ .form-group .form-control {
 form > div.alert-danger ~ .form-group .help-block {
   color: #ff0000;
 }
+
+/* Style about the tweet */
+
+.timeline {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.tweet {
+  padding: 15px;
+  border-left: .3rem solid #d1d1d1
+}
+
+.tweet__author {
+  font-weight: bold;
+}
+
+.tweet__author::before {
+  content: "@";
+}
+
+.tweet__content {
+  display: block;
+  clear: left;
+  text-indent: 12pt;
+}

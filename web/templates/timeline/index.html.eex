@@ -6,7 +6,10 @@
 
   <button @click='postTweet' class='button'>Tweet</button>
 
-  <ul>
-    <li v-for='tweet in tweets'>{{ tweet }}</li>
+  <ul class='timeline'>
+    <li class='tweet' v-for='tweet in tweets'>
+      <span class='tweet__author'>{{ tweet.username }}</span> - {{ tweet.name }}
+      <span class='tweet__content'>{{ tweet.content }}</span>
+    </li>
   </ul>
 </div>
