@@ -1,11 +1,11 @@
 defmodule Sabiah.TimelineChannel do
   use Sabiah.Web, :channel
-  alias Sabiah.{Repo, User}
+  alias Sabiah.{Repo, User, TweetBroadcaster}
 
   def join("timeline:", _payload, _socket) do
     {:error, %{reason: "unauthorized"}}
   end
-  def join("timeline:" <> user_id, payload, socket) do
+  def join("timeline:" <> user_id, _payload, socket) do
     socket = assign(socket, :user_id, user_id)
 
     {:ok, socket}
@@ -18,6 +18,8 @@ defmodule Sabiah.TimelineChannel do
                        |> Map.put("username", user.username)
 
     broadcast socket, "new_tweet", response_payload
+    TweetBroadcaster.broadcast(user.id, response_payload)
+
     {:noreply, socket}
   end
 end
