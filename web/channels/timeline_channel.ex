@@ -3,11 +3,10 @@ defmodule Sabiah.TimelineChannel do
   alias Sabiah.{Repo, User, TweetBroadcaster}
 
   def join("timeline:", _payload, _socket) do
-    {:error, %{reason: "unauthorized"}}
+    {:error, %{reason: "User id is missing."}}
   end
   def join("timeline:" <> user_id, _payload, socket) do
     socket = assign(socket, :user_id, user_id)
-
     {:ok, socket}
   end
 
