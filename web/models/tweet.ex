@@ -13,7 +13,7 @@ defmodule Sabiah.Tweet do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:content])
-    |> validate_required([:content])
+    |> cast(params, [:user_id, :content])
+    |> validate_required([:user_id, :content])
   end
 end
