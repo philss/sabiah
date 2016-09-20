@@ -3,6 +3,6 @@ defmodule Sabiah.TimelineControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
-    assert html_response(conn, 200) =~ "Timeline"
+    assert html_response(conn, 200) =~ "Tweet"
   end
 end

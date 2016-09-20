@@ -1,4 +1,4 @@
-<h2>Timeline</h2>
+<%= Sabiah.LayoutView.user_header(@conn.assigns[:current_user]) %>
 
 <div id='timeline-app'>
   <input type='text' v-model='newTweet'

@@ -33,3 +33,17 @@ form > div.alert-danger ~ .form-group .help-block {
   clear: left;
   text-indent: 12pt;
 }
+
+/* Style for the user profile */
+
+.user-profile {
+  min-width: 450px;
+  max-height: 300px;
+  float: left;
+  vertical-align: middle;
+}
+
+.user-profile__image {
+  float: left;
+  margin: 15px 15px 15px 0;
+}

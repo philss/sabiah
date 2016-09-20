@@ -3,7 +3,7 @@ defmodule Sabiah.TweetTest do
 
   alias Sabiah.Tweet
 
-  @valid_attrs %{content: "some content"}
+  @valid_attrs %{content: "some content", user_id: 42}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

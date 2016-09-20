@@ -1,0 +1,7 @@
+<div class='user-profile'>
+  <h2 class='user-profile__name'>
+    <img class='user-profile__image' src='<%= get_gravatar_image(@user.email) %>' alt='Profile image from <%= @user.name %>'>
+    <%= @user.name %>
+  </h2>
+  <span class='user-profile__username'>@<%= @user.username %></span>
+</div>
