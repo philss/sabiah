@@ -1,7 +1,7 @@
 defmodule Sabiah.TimelineController do
   use Sabiah.Web, :controller
 
-  alias Sabiah.Tweet
+  alias Sabiah.{User, Tweet}
 
   def index(conn, _params) do
     user = conn.assigns[:current_user]
@@ -10,6 +10,19 @@ defmodule Sabiah.TimelineController do
       render(conn, "index.html", tweets: user_tweets(user))
     else
       redirect(conn, to: user_path(conn, :new))
+    end
+  end
+
+  def show(conn, %{ "username" => "@" <> username }) do
+    show(conn, %{"username" => username})
+  end
+  def show(conn, %{ "username" => username }) do
+    user = Repo.get_by(User, username: username)
+
+    if user do
+      render(conn, "show.html", tweets: user_tweets(user), user: user)
+    else
+      render(conn, "404.html", username: username)
     end
   end
 

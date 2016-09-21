@@ -11,6 +11,9 @@ form > div.alert-danger ~ .form-group .help-block {
 /* Style about the tweet */
 
 .timeline {
+  display: block;
+  with: 100%;
+  clear: both;
   list-style: none;
   margin-top: 10px;
 }
@@ -46,4 +49,9 @@ form > div.alert-danger ~ .form-group .help-block {
 .user-profile__image {
   float: left;
   margin: 15px 15px 15px 0;
+}
+
+.my-timeline-button {
+  display: inline-block;
+  float: right;
 }

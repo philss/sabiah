@@ -1,0 +1,12 @@
+<a href='/' class='button button-clear my-timeline-button'>back to my timeline</a>
+
+<%= Sabiah.LayoutView.user_header(@user) %>
+
+<ul class='timeline'>
+  <%= for tweet <- @tweets do %>
+    <li class='tweet'>
+      <span class='tweet__author'><%= tweet.user.username %></span> - <%= tweet.user.name %>
+      <span class='tweet__content'><%= tweet.content %></span>
+    </li>
+  <% end %>
+</ul>
