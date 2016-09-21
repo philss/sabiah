@@ -1,6 +1,8 @@
 defmodule Sabiah.User do
   use Sabiah.Web, :model
 
+  @derive {Phoenix.Param, key: :username}
+
   schema "users" do
     field :name, :string
     field :username, :string

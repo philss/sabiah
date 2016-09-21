@@ -34,7 +34,6 @@ form > div.alert-danger ~ .form-group .help-block {
 .tweet__content {
   display: block;
   clear: left;
-  text-indent: 12pt;
 }
 
 /* Style for the user profile */

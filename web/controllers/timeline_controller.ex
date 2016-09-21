@@ -20,7 +20,11 @@ defmodule Sabiah.TimelineController do
     user = Repo.get_by(User, username: username)
 
     if user do
-      render(conn, "show.html", tweets: user_tweets(user), user: user)
+      tweets = Repo.all(from t in Tweet,
+                        preload: [:user],
+                        where: t.user_id == ^user.id, order_by: [desc: t.inserted_at])
+
+      render(conn, "show.html", tweets: tweets, user: user)
     else
       render(conn, "404.html", username: username)
     end
