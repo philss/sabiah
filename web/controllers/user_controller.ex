@@ -4,8 +4,8 @@ defmodule Sabiah.UserController do
   alias Sabiah.User
 
   def index(conn, _params) do
-    users = Repo.all(User)
-    render(conn, "index.html", users: users)
+    user = conn.assigns[:current_user]
+    render(conn, "index.html", users: users_to_follow(user))
   end
 
   def new(conn, _params) do
@@ -30,5 +30,17 @@ defmodule Sabiah.UserController do
   def show(conn, %{"id" => id}) do
     user = Repo.get!(User, id)
     render(conn, "show.html", user: user)
+  end
+
+  defp users_to_follow(nil), do: []
+  defp users_to_follow(current_user) do
+    following_query = from f in "followers",
+                        where: f.user_id == ^current_user.id,
+                        select: f.followed_user_id
+
+    following = Repo.all(following_query)
+    all_user_ids = Repo.all(from u in User, select: u.id)
+    not_following = all_user_ids -- [current_user.id|following]
+    Repo.all(from u in User, where: u.id in ^not_following)
   end
 end
