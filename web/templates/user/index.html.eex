@@ -1,5 +1,5 @@
 <h2>Users to follow</h2>
-
+<a href='<%= timeline_path(@conn, :index) %>' class='button'>Go to timeline</a> or start following someone
 <table class="table">
   <thead>
     <tr>
