@@ -1,7 +1,26 @@
 defmodule Sabiah.TimelineController do
   use Sabiah.Web, :controller
 
+  alias Sabiah.Tweet
+
   def index(conn, _params) do
-    render conn, "index.html"
+    user = conn.assigns[:current_user]
+
+    if user do
+      render(conn, "index.html", tweets: user_tweets(user))
+    else
+      redirect(conn, to: user_path(conn, :new))
+    end
+  end
+
+  defp user_tweets(user) do
+    tweets_query = from t in Tweet,
+                      join: tm in assoc(t, :timelines),
+                      where: tm.user_id == ^user.id,
+                      preload: [:user],
+                      order_by: [desc: t.inserted_at],
+                      limit: 42
+
+    Repo.all(tweets_query)
   end
 end

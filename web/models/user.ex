@@ -6,6 +6,8 @@ defmodule Sabiah.User do
     field :username, :string
     field :email, :string
 
+    has_many :tweets, Sabiah.Tweet
+
     timestamps()
   end
 

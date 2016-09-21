@@ -3,7 +3,9 @@ defmodule Sabiah.Tweet do
 
   schema "tweets" do
     field :content, :string
+
     belongs_to :user, Sabiah.User
+    has_many :timelines, Sabiah.Timeline
 
     timestamps()
   end

@@ -11,5 +11,12 @@
       <span class='tweet__author'>{{ tweet.username }}</span> - {{ tweet.name }}
       <span class='tweet__content'>{{ tweet.content }}</span>
     </li>
+
+    <%= for tweet <- @tweets do %>
+      <li class='tweet'>
+        <span class='tweet__author'><%= tweet.user.username %></span> - <%= tweet.user.name %>
+        <span class='tweet__content'><%= tweet.content %></span>
+      </li>
+    <% end %>
   </ul>
 </div>
