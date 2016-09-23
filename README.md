@@ -1,7 +1,7 @@
 # Sabiah
 
 This is the code for the presentation I did in Ruby Conf BR 2016.
-It's a MVP of Twitter. It's written using Phoenix and Vue.js
+It's a MVP of something similar to Twitter. It's written using Phoenix and Vue.js
 
 ## Running
 
