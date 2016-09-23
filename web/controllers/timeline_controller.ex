@@ -7,14 +7,14 @@ defmodule Sabiah.TimelineController do
     user = conn.assigns[:current_user]
 
     if user do
-      render(conn, "index.html", tweets: user_tweets(user))
+      render(conn, "index.html", tweets: tweets_from_timeline(user))
     else
       redirect(conn, to: user_path(conn, :new))
     end
   end
 
   def show(conn, %{ "username" => "@" <> username }) do
-    show(conn, %{"username" => username})
+    show(conn, %{ "username" => username })
   end
   def show(conn, %{ "username" => username }) do
     user = Repo.get_by(User, username: username)
@@ -30,10 +30,10 @@ defmodule Sabiah.TimelineController do
     end
   end
 
-  defp user_tweets(user) do
+  defp tweets_from_timeline(user) do
     tweets_query = from t in Tweet,
-                      join: tm in assoc(t, :timelines),
-                      where: tm.user_id == ^user.id,
+                      join: tl in assoc(t, :timelines),
+                      where: tl.user_id == ^user.id,
                       preload: [:user],
                       order_by: [desc: t.inserted_at],
                       limit: 42
