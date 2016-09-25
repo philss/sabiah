@@ -1,10 +1,14 @@
 defmodule Sabiah.User do
   use Sabiah.Web, :model
 
+  @derive {Phoenix.Param, key: :username}
+
   schema "users" do
     field :name, :string
     field :username, :string
     field :email, :string
+
+    has_many :tweets, Sabiah.Tweet
 
     timestamps()
   end

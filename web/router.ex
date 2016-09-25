@@ -23,6 +23,10 @@ defmodule Sabiah.Router do
     resources "/users",
               UserController,
               only: [:index, :new, :create, :show]
+
+    # It's important that this route is the last one
+    # because we should catch the other ones before
+    get "/:username", TimelineController, :show
   end
 
   defp put_user_when_logged_in(conn, _) do

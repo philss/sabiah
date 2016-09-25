@@ -1,3 +1,5 @@
+<a href='/users' class='button button-clear my-timeline-button'>users to follow</a>
+
 <%= Sabiah.LayoutView.user_header(@conn.assigns[:current_user]) %>
 
 <div id='timeline-app'>
@@ -8,8 +10,15 @@
 
   <ul class='timeline'>
     <li class='tweet' v-for='tweet in tweets'>
-      <span class='tweet__author'>{{ tweet.username }}</span> - {{ tweet.name }}
+      <a href='/{{ tweet.username }}' class='tweet__author'>{{ tweet.username }}</a> - {{ tweet.name }}
       <span class='tweet__content'>{{ tweet.content }}</span>
     </li>
+
+    <%= for tweet <- @tweets do %>
+      <li class='tweet'>
+        <a href="<%= timeline_path(@conn, :show, tweet.user) %>" class='tweet__author'><%= tweet.user.username %></a> - <%= tweet.user.name %>
+        <span class='tweet__content'><%= tweet.content %></span>
+      </li>
+    <% end %>
   </ul>
 </div>

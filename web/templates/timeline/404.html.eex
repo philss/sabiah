@@ -1,0 +1,3 @@
+<h2>User not found 😞</h2>
+
+The username "<%= @username %>" is not associated with an account in Sabiah.
