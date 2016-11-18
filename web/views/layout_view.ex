@@ -15,6 +15,6 @@ defmodule Sabiah.LayoutView do
            |> :erlang.md5()
            |> Base.encode16(case: :lower)
 
-    "http://gravatar.com/avatar/#{hash}?d=retro"
+    "//gravatar.com/avatar/#{hash}?d=retro"
   end
 end
