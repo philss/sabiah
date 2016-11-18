@@ -22,7 +22,7 @@ defmodule Sabiah.Router do
 
     resources "/users",
               UserController,
-              only: [:index, :new, :create, :show]
+              only: [:index, :new, :create]
 
     # It's important that this route is the last one
     # because we should catch the other ones before

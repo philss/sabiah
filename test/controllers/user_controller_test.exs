@@ -25,16 +25,4 @@ defmodule Sabiah.UserControllerTest do
     conn = post conn, user_path(conn, :create), user: @invalid_attrs
     assert html_response(conn, 200) =~ "New user"
   end
-
-  test "shows chosen resource", %{conn: conn} do
-    user = Repo.insert! %User{username: "alice", name: "Alice", email: "alice@email.com"}
-    conn = get conn, user_path(conn, :show, user)
-    assert html_response(conn, 200) =~ "Show user"
-  end
-
-  test "renders page not found when id is nonexistent", %{conn: conn} do
-    assert_error_sent 404, fn ->
-      get conn, user_path(conn, :show, -1)
-    end
-  end
 end

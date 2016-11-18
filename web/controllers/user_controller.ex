@@ -27,11 +27,6 @@ defmodule Sabiah.UserController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    user = Repo.get!(User, id)
-    render(conn, "show.html", user: user)
-  end
-
   defp users_to_follow(nil), do: []
   defp users_to_follow(current_user) do
     following_query = from f in "followers",
