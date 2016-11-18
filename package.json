@@ -1,15 +1,15 @@
 {
   "repository": {},
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "scripts": {
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
-    "milligram": "^1.1.0",
+    "milligram": "~1.1.0",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
-    "vue": "^2.0.0-rc.5"
+    "vue": "~2.0.0"
   },
   "devDependencies": {
     "babel-brunch": "~6.0.0",
