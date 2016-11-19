@@ -1,7 +1,10 @@
 # Sabiah
 
-This is the code for the presentation I did in Ruby Conf BR 2016.
-It's a MVP of something similar to Twitter. It's written using Phoenix and Vue.js
+This is the code for the presentation I did at [Ruby Conf BR 2016](http://www.rubyconf.com.br/) and also at the [ElugSP #7](https://www.meetup.com/pt-BR/elug_sp/events/234642921/).
+
+It's a MVP of something similar to Twitter. It's written using Phoenix and Vue.js.
+
+You can find the slides at [Speaker Deck](https://speakerdeck.com/philss/um-clone-do-twitter-com-phoenix-e-vue-dot-js) (in Portuguese).
 
 ## Running
 
@@ -19,8 +22,6 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview
   * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
 
 ## License
 
