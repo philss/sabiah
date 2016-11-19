@@ -5,7 +5,9 @@ defmodule Sabiah.UserSocket do
   channel "timeline:*", Sabiah.TimelineChannel
 
   ## Transports
-  transport :websocket, Phoenix.Transports.WebSocket
+  # NOTE: timeout should be less than 55_000 for production
+  transport :websocket, Phoenix.Transports.WebSocket,
+    timeout: 45_000
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket connection
