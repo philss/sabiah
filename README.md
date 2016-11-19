@@ -1,6 +1,6 @@
 # Sabiah
 
-This is the code for the presentation I did at [Ruby Conf BR 2016](http://www.rubyconf.com.br/) and also at the [ElugSP #7](https://www.meetup.com/pt-BR/elug_sp/events/234642921/).
+This is the code for the presentation I gave at [Ruby Conf BR 2016](http://www.rubyconf.com.br/) and also at the [ElugSP #7](https://www.meetup.com/pt-BR/elug_sp/events/234642921/).
 
 It's a MVP of something similar to Twitter. It's written using Phoenix and Vue.js.
 
